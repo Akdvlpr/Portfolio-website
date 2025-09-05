@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>✨ Mini Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">✨ THE SHOPPING SLASH</div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#products">Products</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+
+    <div class="nav-right">
+      <button id="cart-toggle" class="cart-btn" aria-label="Open cart">🛒 <span id="cart-count">0</span></button>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Welcome to the future of shopping ✨</h1>
+      <p class="muted">Minimal. Modern. Gen Z vibes.</p>
+      <a class="btn" href="#products">Start shopping</a>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="products">
+    <h2 class="section-title">🛍️ Our Products</h2>
+
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <article class="product-card" data-name="Cool Headphones" data-price="49.99" data-img="https://images.pexels.com/photos/3394655/pexels-photo-3394655.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <img src="https://images.pexels.com/photos/3394655/pexels-photo-3394655.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cool Headphones">
+        <h3>Cool Headphones</h3>
+        <p class="price">$49.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-name="Trendy Watch" data-price="120.00" data-img="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <img src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trendy Watch">
+        <h3>Trendy Watch</h3>
+        <p class="price">$120.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-name="Modern Laptop" data-price="499.99" data-img="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800">
+        <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800" alt="Modern Laptop">
+        <h3>Modern Laptop</h3>
+        <p class="price">$499.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-name="Urban Backpack" data-price="49.99" data-img="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800">
+        <img src="https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Urban Backpack">
+        <h3>Urban Backpack</h3>
+        <p class="price">$49.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR + OVERLAY -->
+  <div id="cart-overlay" class="cart-overlay hidden"></div>
+
+  <aside id="cart-sidebar" class="cart-sidebar" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart" class="close-cart" aria-label="Close cart">✖</button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+      <!-- items injected here -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal">Subtotal: <strong id="cart-subtotal">$0.00</strong></div>
+      <div class="cart-actions">
+        <a href="checkout.html" class="btn checkout-link">Go to Checkout</a>
+        <button id="clear-cart" class="btn ghost">Clear</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Made with ❤️ by MrNobody</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout - Mini Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAV (same structure so cart works) -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">✨ Mini Store</div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#products">Products</a>
+      <a href="checkout.html" aria-current="page">Checkout</a>
+    </nav>
+
+    <div class="nav-right">
+      <button id="cart-toggle" class="cart-btn">🛒 <span id="cart-count">0</span></button>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="checkout-page">
+    <section class="checkout">
+      <h2 class="section-title">🧾 Checkout</h2>
+
+      <div class="checkout-grid">
+        <!-- Form card -->
+        <form id="checkout-form" class="checkout-form" autocomplete="on">
+          <label>
+            Full name
+            <input name="fullname" type="text" required placeholder="Jane Doe">
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            Shipping address
+            <input name="address" type="text" required placeholder="Street, City, Country">
+          </label>
+
+          <div style="display:flex;gap:10px;margin-top:8px;">
+            <button type="submit" class="btn">Place Order</button>
+            <a href="index.html" class="btn ghost">Continue Shopping</a>
+          </div>
+        </form>
+
+        <!-- Small cart preview (same sidebar content rendered inline for wider screens) -->
+        <aside class="mini-cart-preview">
+          <h4>Order Summary</h4>
+          <div id="mini-cart-items" class="cart-items"></div>
+          <div class="cart-subtotal">Subtotal: <strong id="mini-cart-subtotal">$0.00</strong></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart sidebar + overlay (works here too) -->
+  <div id="cart-overlay" class="cart-overlay hidden"></div>
+
+  <aside id="cart-sidebar" class="cart-sidebar" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart" class="close-cart" aria-label="Close cart">✖</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">Subtotal: <strong id="cart-subtotal">$0.00</strong></div>
+      <div class="cart-actions">
+        <a href="#" class="btn checkout-link" onclick="document.getElementById('checkout-form').scrollIntoView({behavior:'smooth'}); return false;">Checkout</a>
+        <button id="clear-cart" class="btn ghost">Clear</button>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ by MrNobody</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
